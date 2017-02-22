@@ -19,9 +19,12 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
-		<!-- spring boot的热部署 -->
-		<!-- <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-devtools</artifactId> 
-			<optional>true</optional> </dependency> -->
+		<!-- spring boot的热部署  springload 当jdk使用1.8的时候不好用 测试版本1.2.6release-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<optional>true</optional>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -36,5 +39,5 @@
 			<version>4.12</version>
 		</dependency>
 	</dependencies>
-	
+
 </project>
