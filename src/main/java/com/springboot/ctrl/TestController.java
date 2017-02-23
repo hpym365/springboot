@@ -9,7 +9,7 @@ public class TestController {
 	
 	@RequestMapping("/")
 	public String getDefault() {
-		return "Hello,Spring Boot12123cdxfxnbv ,mnbvcx hgfdszaVGBC NMFDGEWza";
+		return "Hello,Spring Boot";
 	}
 	
 	@RequestMapping(value="/test",method=RequestMethod.GET)
