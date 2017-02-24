@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.springboot.dao.StudentRepsitory;
+import com.springboot.entry.Student;
 import com.springboot.entry.User;
 
 import io.swagger.annotations.ApiImplicitParam;
@@ -24,6 +27,9 @@ import io.swagger.annotations.ApiOperation;
 @RequestMapping(value = "/users")
 // 通过这里配置使下面的映射都在/users下
 public class UserController {
+
+	@Autowired
+	StudentRepsitory userdao;
 
 	// 创建线程安全的Map
 	static Map<Long, User> users = Collections.synchronizedMap(new HashMap<Long, User>());
@@ -75,5 +81,20 @@ public class UserController {
 		// 处理"/users/{id}"的DELETE请求，用来删除User
 		users.remove(id);
 		return "success";
+	}
+
+	@ApiOperation(value = "创建用户JPA", notes = "创建用户JPA")
+//	@ApiImplicitParam(name = "student", value = "student entity", dataType = "Student")
+	@RequestMapping(value = "/jpa", method = RequestMethod.POST)
+	public String addUser(@RequestBody Student s) {
+		userdao.save(s);
+		return "success";
+	}
+
+	@ApiOperation(value = "获取用户列表JPA", notes = "获取用户列表JPA")
+	@RequestMapping(value = "/jpa", method = RequestMethod.GET)
+	public List<Student> findAll() {
+		List<Student> r = userdao.findAll();
+		return r;
 	}
 }
