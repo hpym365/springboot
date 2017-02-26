@@ -12,12 +12,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.springboot.dao.StudentRepsitory;
-import com.springboot.entry.Student;
-import com.springboot.entry.User;
+import com.springboot.entity.Student;
+import com.springboot.entity.User;
+import com.springboot.repository.StudentRepsitory;
 
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;

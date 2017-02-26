@@ -7,9 +7,9 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
 import com.springboot.dao.UserDao;
-import com.springboot.entry.User;
+import com.springboot.entity.User;
 
-@Component
+//@Component
 public class UserDaoImpl implements UserDao {
 
 	@Autowired

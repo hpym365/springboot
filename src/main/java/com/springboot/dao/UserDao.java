@@ -2,7 +2,7 @@ package com.springboot.dao;
 
 import java.util.List;
 
-import com.springboot.entry.User;
+import com.springboot.entity.User;
 
 public interface UserDao {
 

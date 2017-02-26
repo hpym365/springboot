@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.springboot.dao.UserDao;
-import com.springboot.entry.User;
+import com.springboot.entity.User;
 
-@Controller
+//@Controller
 public class TestController {
 	@Autowired
 	UserDao dao;

@@ -1,12 +1,23 @@
-package com.springboot.entry;
+package com.springboot.entity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 import org.springframework.stereotype.Component;
 
-@Component
-public class User {
+@Entity
+public class Student {
 
+	@Id
+	@GeneratedValue
 	private long id;
+	
+	@Column
 	private String name;
+	
+	@Column
 	private Integer age;
 
 	public long getId() {
